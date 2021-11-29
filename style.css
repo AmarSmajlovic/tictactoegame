@@ -1,0 +1,62 @@
+body {
+  background-image: url("bg.jpg");
+}
+
+.wrapper {
+  width: 450px;
+  margin: auto;
+  text-align: center;
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+.game-main {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+}
+
+.cell {
+  border: 1px solid gray;
+  font-size: 120px;
+  line-height: 140px;
+  user-select: none;
+  background-color: rgba(128, 128, 128, 0.275);
+  transition: 0.4s;
+}
+
+.cell:hover {
+  background-color: rgba(128, 128, 128, 0.535);
+}
+
+#board.X .cell:hover:not(.clicked)::before {
+  content: "X";
+  opacity: 0.6;
+}
+
+#board.O .cell:hover:not(.clicked):before {
+  content: "O";
+  opacity: 0.6;
+}
+
+.cell.clicked {
+  cursor: not-allowed;
+}
+
+#restart {
+  width: 100%;
+  padding: 10px;
+  color: black;
+  font-size: 1.2em;
+  border: none;
+  font-family: "Gloria Hallelujah", cursive;
+  border: 1px solid gray;
+  transition: 0.5s;
+}
+#restart:hover {
+  background-color: red;
+  color: white;
+}
+
+#restart:hover {
+  opacity: 0.6;
+}
